@@ -1,9 +1,10 @@
 wordpress Cookbook
 ==================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+All this cookbook does right now is allow read/write on the wp-content folder. You should install a plugin (in your
+app's git repo) such as http://wordpress.org/plugins/amazon-s3-and-cloudfront/, to allow the user to mirror all their
+content on S3.
+
 
 Requirements
 ------------
