@@ -18,12 +18,12 @@ node[:deploy].each do |application, deploy|
   
   wordpress_deploy_dir do
     user deploy[:user]
-    path deploy[:deploy_to]  + "/current/cache"
+    path deploy[:deploy_to]  + "/current/application/cache"
   end
   
   wordpress_deploy_dir do
     user deploy[:user]
-    path deploy[:deploy_to]  + "/current/logs"
+    path deploy[:deploy_to]  + "/current/application/logs"
   end
   
   file "/etc/httpd/sites-available/stockrank.conf.d/env_vars.conf" do
