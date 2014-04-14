@@ -15,6 +15,17 @@ node[:deploy].each do |application, deploy|
     user deploy[:user]
     path deploy[:deploy_to]  + "/current/wp-content"
   end
+  
+  wordpress_deploy_dir do
+    user deploy[:user]
+    path deploy[:deploy_to]  + "/current/cache"
+  end
+  
+  
+  wordpress_deploy_dir do
+    user deploy[:user]
+    path deploy[:deploy_to]  + "/current/logs"
+  end
 
 end
 
