@@ -21,10 +21,16 @@ node[:deploy].each do |application, deploy|
     path deploy[:deploy_to]  + "/current/cache"
   end
   
-  
   wordpress_deploy_dir do
     user deploy[:user]
     path deploy[:deploy_to]  + "/current/logs"
+  end
+  
+  file "/etc/httpd/sites-available/stockrank.conf.d/env_vars.conf" do
+    owner deploy[:user]
+    group deploy[:group]
+    content "SetEnv KOHANA_ENV PRODUCTION"
+    notifies :reload, resources(:service => 'httpd')
   end
 
 end
