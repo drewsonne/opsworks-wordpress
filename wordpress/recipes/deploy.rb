@@ -30,7 +30,7 @@ node[:deploy].each do |application, deploy|
     owner deploy[:user]
     group deploy[:group]
     content "SetEnv KOHANA_ENV PRODUCTION"
-    notifies :reload, resources(:service => 'httpd')
+    notifies :reload, resources(:service => 'apache2')
   end
 
 end
