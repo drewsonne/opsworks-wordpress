@@ -26,7 +26,7 @@ node[:deploy].each do |application, deploy|
     path deploy[:deploy_to]  + "/current/application/logs"
   end
   
-  file "/etc/httpd/sites-available/stockrank.conf.d/env_vars.conf" do
+  file "/etc/httpd/sites-available/stockrank.conf.d/local_env_vars.conf" do
     owner deploy[:user]
     group deploy[:group]
     content "SetEnv KOHANA_ENV PRODUCTION"
